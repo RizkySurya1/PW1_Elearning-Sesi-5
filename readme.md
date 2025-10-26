@@ -24,7 +24,7 @@ Musik yang digunakan: **Suap Binatang.mp3**
 
 Berikut hasil tampilan website saya:
 
-![Tampilan Awal](screenshot1.png)
-![Bagian Konten](screenshot2.png)
-![Saat Tekan Play](screenshot3.png)
-![Saat Tekan Stop](screenshot.png)
+![Tampilan Awal](image/screenshot1.png)
+![Bagian Konten](image/screenshot2.png)
+![Saat Tekan Play](image/screenshot3.png)
+![Saat Tekan Stop](image/screenshot.png)
