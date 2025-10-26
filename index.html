@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tugas Pemrograman Web - Black & White</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #111;
+      color: #eee;
+      line-height: 1.6;
+    }
+
+    .navbar {
+      background-color: #000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+      border-bottom: 1px solid #333;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .navbar .logo {
+      font-weight: bold;
+      font-size: 18px;
+      color: white;
+    }
+
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+
+    .navbar a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .navbar a:hover {
+      color: #aaa;
+    }
+
+    .header {
+      position: relative;
+      text-align: center;
+      color: #fff;
+      height: 350px;
+      background: url('image/header-bg.png') center center / cover no-repeat;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding-bottom: 60px;
+      border-bottom: 1px solid #333;
+    }
+
+    .header .overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6);
+    }
+
+    .header-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .header-content h1 {
+      font-size: 28px;
+      font-weight: 600;
+      color: #fff;
+      letter-spacing: 1px;
+    }
+
+    .content {
+      padding: 50px 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .content h2 {
+      font-size: 22px;
+      margin-bottom: 15px;
+      border-bottom: 1px solid #555;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+
+    .content p {
+      margin-bottom: 20px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 25px;
+    }
+
+    th, td {
+      border: 1px solid #444;
+      padding: 10px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #222;
+    }
+
+    td {
+      background-color: #111;
+    }
+
+    form input, form textarea {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #444;
+      background: #000;
+      color: #eee;
+      border-radius: 4px;
+    }
+
+    form button {
+      background: #fff;
+      color: #000;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    form button:hover {
+      background: #ddd;
+    }
+
+    .music-section {
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    .music-section h2 {
+      font-size: 24px;
+      margin-bottom: 25px;
+      color: #fff;
+      border-bottom: 2px solid #555;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+
+    .music-card {
+      width: 240px;
+      background-color: #1a1a1a;
+      border: 1px solid #333;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+      margin: 20px auto;
+      position: relative;
+    }
+
+    .music-card img {
+      width: 100%;
+      display: block;
+      filter: grayscale(40%);
+      border-bottom: 1px solid #333;
+    }
+
+    .music-info {
+      padding: 10px;
+      text-align: center;
+    }
+
+    .music-info h3 {
+      color: #fff;
+      font-size: 16px;
+      margin-bottom: 4px;
+    }
+
+    .music-info p {
+      color: #aaa;
+      font-size: 14px;
+    }
+
+    .music-controls {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .music-btn {
+      background-color: #fff;
+      color: #000;
+      border: none;
+      border-radius: 50%;
+      width: 45px;
+      height: 45px;
+      cursor: pointer;
+      font-size: 18px;
+      transition: 0.3s;
+    }
+
+    .music-btn:hover {
+      background-color: #aaa;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #000;
+      color: #888;
+      border-top: 1px solid #333;
+      font-size: 14px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="logo">MyProfile</div>
+    <ul class="menu">
+      <li><a href="#">Home</a></li>
+      <li><a href="#tentang">Tentang Saya</a></li>
+      <li><a href="#kontak">Kontak</a></li>
+    </ul>
+  </nav>
+
+  <header class="header">
+    <div class="overlay"></div>
+    <div class="header-content">
+      <h1>Tugas Pemrograman Web</h1>
+    </div>
+  </header>
+
+  <main class="content">
+    <section>
+      <h2>Data Diri</h2>
+      <table>
+        <tr><th>Data</th><th>Informasi</th></tr>
+        <tr><td>Nama</td><td>Rizky Surya Diputra</td></tr>
+        <tr><td>NIM</td><td>23552011390</td></tr>
+        <tr><td>Jurusan</td><td>Teknik Informatika</td></tr>
+        <tr><td>Kampus</td><td>Universitas Teknologi Bandung</td></tr>
+      </table>
+    </section>
+
+    <section id="tentang">
+      <h2>Tentang Saya</h2>
+      <p>
+        Saya Rizky Surya Diputra, seorang mahasiswa Teknik Informatika di Universitas Teknologi Bandung.
+        Saat ini, saya sedang dalam tahap awal perjalanan saya di dunia pemrograman web.
+        Fokus utama saya adalah menguasai dasar-dasar di HTML, CSS, dan JavaScript.
+        Tujuan saya adalah menjadi mahir di bidang Full-Stack Developer,
+        dengan kemampuan mumpuni baik di sisi front-end maupun back-end.
+      </p>
+        Di luar dunia kode, saya juga memiliki passion yang besar di bidang musik.
+        Saya hobi bermain alat musik dan bahkan sudah aktif bermusik dengan band sendiri.
+        Keseimbangan antara logika pemrograman dan kreativitas bermusik ini menjadi energi tersendiri dalam proses belajar saya.
+      </p>
+    </section>
+
+    <section class="hobby-section">
+      <h2>Hobi</h2>
+      <p>
+        Selain pemrograman dan musik, saya memiliki beberapa hobi yang saya jalani untuk menyeimbangkan waktu luang:
+      </p>
+      <ul>
+        <li>Bermain game</li>
+        <li>Membaca buku</li>
+        <li>Membangun proyek kecil dengan JavaScript</li>
+      </ul>
+    </section>
+
+    <section class="music-section">
+      <h2>Our Single</h2>
+
+      <div class="music-card">
+        <img src="image/band-photo.png" alt="Band Image">
+        <div class="music-info">
+          <h3>Hail Tä</h3>
+          <p>Kota Bandung</p>
+          <div class="music-controls">
+            <button class="music-btn" onclick="playMusic()">▶</button>
+            <button class="music-btn" onclick="pauseMusic()">⏸</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="kontak">
+      <h2>Formulir Kontak</h2>
+      <form>
+        <label>Nama:</label><br>
+        <input type="text" name="nama" placeholder="Masukkan nama"><br><br>
+        <label>Email:</label><br>
+        <input type="email" name="email" placeholder="Masukkan email"><br><br>
+        <label>Pesan:</label><br>
+        <textarea name="pesan" rows="4" placeholder="Tulis pesan Anda"></textarea><br><br>
+        <button type="submit">Kirim</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© 2025 | Tugas Pemrograman Web</p>
+  </footer>
+
+  <script>
+  const audio = new Audio('image/Suap Binatang.mp3');
+
+    function playMusic() {
+      audio.play();
+      alert("Musik dimainkan 🎵");
+    }
+
+    function pauseMusic() {
+      audio.pause();
+      alert("Musik dijeda ⏸️");
+    }
+  </script>
+
+</body>
+</html>
