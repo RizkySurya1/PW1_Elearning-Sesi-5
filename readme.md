@@ -27,4 +27,4 @@ Berikut hasil tampilan website saya:
 ![Tampilan Awal](image/screenshot1.png)
 ![Bagian Konten](image/screenshot2.png)
 ![Saat Tekan Play](image/screenshot3.png)
-![Saat Tekan Stop](image/screenshot.png)
+![Saat Tekan Stop](image/screenshot4.png)
